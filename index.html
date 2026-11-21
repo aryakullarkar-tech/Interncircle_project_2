@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive to-do list built with HTML, CSS and JavaScript. Tasks are saved in the browser using LocalStorage.">
+  <title>To-Do List | Project 02</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <p class="eyebrow">Project 02</p>
+      <h1>My Task List</h1>
+      <p class="subtitle">Add tasks, tick them off and come back later. Everything is saved in your browser.</p>
+    </header>
+
+    <section class="add-task" aria-label="Add a new task">
+      <label for="task-input" class="visually-hidden">New task</label>
+      <input id="task-input" type="text" placeholder="What do you need to do?" maxlength="120" autocomplete="off">
+      <button id="add-btn" class="btn btn-primary" type="button">Add</button>
+    </section>
+    <p id="error-message" class="error-message" role="alert"></p>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+      <button class="filter-btn" type="button" data-filter="active">Active</button>
+      <button class="filter-btn" type="button" data-filter="completed">Completed</button>
+    </nav>
+
+    <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    <p id="empty-state" class="empty-state">No tasks here yet. Add your first one above.</p>
+
+    <footer class="app-footer">
+      <span id="task-count">0 tasks left</span>
+      <button id="clear-completed" class="btn btn-ghost" type="button">Clear completed</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
